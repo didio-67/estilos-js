@@ -1,4 +1,4 @@
-const baseDeDatosBusqueda = {
+{
             "total_resultados": 201,
             "resultados": [{
                     "nombre": "abby montano",
