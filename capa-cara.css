@@ -1,0 +1,64 @@
+/* Capa caratula*/
+/* Estilo para ocultar la carátula al hacer clic */
+.video-responsive.reproduciendo .capa-caratula {
+  opacity: 0;
+  pointer-events: none;
+}
+	.capa-caratula {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+
+  /* Filtro oscuro transparente (Capa negra al 50% de opacidad) */
+  background-color: rgba(0, 0, 0, 1);
+}
+
+/* Asegura que la imagen quede por detrás del tono oscuro */
+.capa-caratula img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+	.boton-play {
+  position: absolute;
+  background: rgba(255, 255, 0, 0.5);
+  color: black;
+  border-radius: 50%;
+
+  /* Tamaños proporcionales usando el ancho del contenedor */
+  width: 12%;          /* Se adapta según el ancho disponible */
+  aspect-ratio: 1 / 1; /* Mantiene el círculo perfecto sin importar el tamaño */
+  max-width: 150px;    /* Límite máximo para que no se vuelva gigante en monitores 4K */
+  min-width: 50px;     /* Límite mínimo para que no quede invisible en móviles pequeños */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* El tamaño del triángulo interno también se adaptará proporcionalmente */
+  font-size: 4.5cqi;
+  min-font-size: 20px;
+  padding-left: 0.5%;  /* Ajuste milimétrico para centrar visualmente el triángulo */
+  color: black;
+  box-shadow: 0 4px 10px rgba(255,255,0,0.5);
+  z-index: 11;
+  transition: transform 0.2s ease; /* Pequeño efecto visual */
+}
+
+/* Opcional: Hace que el botón resalte un poco al pasar el mouse por encima */
+.video-responsive:hover .boton-play {
+  transform: scale(1.1) rotate(360deg);
+	color: #ffda3e;
+	background: rgba(0,0,0,0.5);
+}
